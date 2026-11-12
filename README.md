@@ -44,7 +44,7 @@ CAMPUS-FLOW provides a centralized platform where students can enroll in summer 
 ![CAMPUS-FLOW Login](screenshots/login-page.png)
 
 ### 2. Student Dashboard
-![Student Dashboard](screenshots/student-dashboard.png)
+![Student Dashboard](screenshots/student-dahboard.png)
 
 ### 3. Teacher Dashboard
 ![Teacher Dashboard](screenshots/teacher-dashboard.png)
