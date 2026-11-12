@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Verification | Student Enrollment</title>
+    <link rel="stylesheet" href="../css/fee-verification.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Summer Enrollment</span>
+            </div>
+
+            <a href="student-dashboard.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Dashboard
+            </a>
+        </header>
+
+        <main class="main-content">
+
+            <!-- Page Heading -->
+            <div class="page-heading">
+                <span class="step-label">STEP 2 OF 2</span>
+                <h1>Fee Verification</h1>
+                <p>Upload your payment proof to complete your enrollment process.</p>
+            </div>
+
+            <div class="content-grid">
+
+                <!-- Left Side: Payment Instructions -->
+                <section class="instructions-card">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                    <h2>Payment Instructions</h2>
+                    <p class="description">
+                        Please complete your fee payment and upload a clear
+                        screenshot or receipt as proof.
+                    </p>
+
+                    <div class="payment-detail">
+                        <span>Account Title</span>
+                        <strong>Summer Enrollment</strong>
+                    </div>
+
+                    <div class="payment-detail">
+                        <span>Bank Name</span>
+                        <strong>Your Bank Name</strong>
+                    </div>
+
+                    <div class="payment-detail">
+                        <span>Account / IBAN</span>
+                        <strong>XXXX-XXXX-XXXX</strong>
+                    </div>
+
+                    <div class="payment-detail">
+                        <span>Course Fee</span>
+                        <strong class="fee">Rs. 5,000</strong>
+                    </div>
+
+                    <div class="notice">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>
+                            Make sure to pay the correct fee before submitting
+                            your payment proof.
+                        </p>
+                    </div>
+
+                </section>
+
+
+                <!-- Right Side: Upload Form -->
+                <section class="upload-card">
+
+                    <h2>Upload Payment Proof</h2>
+                    <p class="description">
+                        Enter your transaction details and attach your receipt.
+                    </p>
+
+                    <form action="/submit-fee-proof"
+                          method="POST"
+                          enctype="multipart/form-data">
+
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <input type="text" id="studentId"
+                                   name="studentId"
+                                   placeholder="Enter your student ID"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transactionId">Transaction ID</label>
+                            <input type="text" id="transactionId"
+                                   name="transactionId"
+                                   placeholder="Enter transaction ID"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="paymentDate">Payment Date</label>
+                            <input type="date" id="paymentDate"
+                                   name="paymentDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="paymentMethod">Payment Method</label>
+                            <select id="paymentMethod" name="paymentMethod" required>
+                                <option value="">Select payment method</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                                <option value="JazzCash">JazzCash</option>
+                                <option value="EasyPaisa">EasyPaisa</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Payment Receipt / Screenshot</label>
+
+                            <label for="proof" class="upload-area">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <strong>Click to upload your receipt</strong>
+                                <span>PNG, JPG or PDF (Maximum 5 MB)</span>
+                                <input type="file" id="proof"
+                                       name="proof"
+                                       accept=".png,.jpg,.jpeg,.pdf"
+                                       required>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Submit for Verification
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </form>
+
+                    <div class="security-note">
+                        <i class="fa-solid fa-lock"></i>
+                        Your payment information will be securely submitted
+                        for admin verification.
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- Verification Process -->
+            <section class="process-card">
+
+                <h2>What Happens Next?</h2>
+
+                <div class="process-steps">
+
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-file-arrow-up"></i>
+                        </div>
+                        <h3>Submit Proof</h3>
+                        <p>Upload your payment receipt.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-icon pending">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h3>Under Review</h3>
+                        <p>Admin checks your payment details.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-icon success">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3>Enrollment Approved</h3>
+                        <p>Your enrollment is confirmed after approval.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <p class="footer-text">
+                Need help? Contact the administration office.
+            </p>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

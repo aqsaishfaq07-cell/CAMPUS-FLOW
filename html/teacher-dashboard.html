@@ -1,0 +1,1008 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard | SummerEnroll</title>
+
+    <link rel="stylesheet" href="../css/teacher-dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">SE</div>
+
+            <div>
+                <h2>SummerEnroll</h2>
+                <p>Teacher Portal</p>
+            </div>
+        </div>
+
+
+        <!-- Sidebar Menu -->
+        <nav class="sidebar-menu">
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <a href="#dashboard" class="menu-item active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#profile" class="menu-item">
+                <span>♙</span> My Profile
+            </a>
+
+            <a href="#courses" class="menu-item">
+                <span>▤</span> My Courses
+            </a>
+
+            <a href="#students" class="menu-item">
+                <span>♧</span> My Students
+            </a>
+
+
+            <p class="menu-heading">ACADEMIC MANAGEMENT</p>
+
+            <a href="#mark-attendance" class="menu-item">
+                <span>◷</span> Mark Attendance
+            </a>
+
+            <a href="#attendance-records" class="menu-item">
+                <span>▧</span> Attendance Records
+            </a>
+            <a href="#upload-marks" class="menu-item">
+    <span>✎</span> Upload Marks
+</a>
+
+            <a href="#assignments" class="menu-item">
+                <span>▣</span> Assignments
+            </a>
+
+            <a href="#announcements" class="menu-item">
+                <span>✉</span> Announcements
+            </a>
+
+            <a href="#timetable" class="menu-item">
+                <span>▦</span> Timetable
+            </a>
+
+
+            <p class="menu-heading">UPDATES</p>
+
+            <a href="#notifications" class="menu-item">
+                <span>♧</span> Notifications
+                <span class="notification-count">2</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Teacher Profile -->
+        <div class="sidebars-bottom">
+
+            <div class="sidebar-bottom">
+            <a href="index.html" class="logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="dashboard">
+
+
+        <!-- TOP HEADER -->
+       
+       
+<!-- TOP HEADER -->
+<header class="top-header">
+
+    <div class="header-left">
+        <h2>Teacher Dashboard</h2>
+        <p>Manage your assigned courses and academic activities.</p>
+    </div>
+
+    <div class="header-right">
+
+        <a href="#notifications" class="notification-icon">
+            ♧
+            <span></span>
+        </a>
+
+        <div class="header-profile">
+
+            <div class="avatar" id="teacherAvatar">T</div>
+
+            <div>
+                <h4 id="headerTeacherName">Teacher Name</h4>
+                <p>Teacher</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- WELCOME SECTION -->
+<section class="welcome-section">
+
+    <div>
+        <span class="welcome-label">TEACHER PORTAL</span>
+
+        <h1 id="welcomeTeacherName">Welcome, Teacher!</h1>
+
+        <p>
+            Manage your courses, student attendance
+            and assignments from one place.
+        </p>
+    </div>
+
+    <div class="session-badge">
+        <span>Academic Session</span>
+        <h3>Summer Session</h3>
+    </div>
+
+</section>
+
+
+<!-- TEACHER INFORMATION -->
+<section class="content-section" id="profile">
+
+    <div class="section-heading">
+        <h2>Teacher Information</h2>
+    </div>
+
+    <div class="info-card">
+
+        <div class="info-item">
+            <span>Teacher ID</span>
+            <h3 id="teacherId">Teacher ID</h3>
+        </div>
+
+        <div class="info-item">
+            <span>Teacher Name</span>
+            <h3 id="teacherName">Teacher Name</h3>
+        </div>
+
+        <div class="info-item">
+            <span>Department</span>
+            <h3 id="teacherDepartment">Department Name</h3>
+        </div>
+
+        <div class="info-item">
+            <span>Role</span>
+            <h3>Teacher</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATISTICS -->
+<section class="stats-grid">
+
+    <div class="stat-card">
+        <div class="stat-icon">▤</div>
+        <p>Assigned Courses</p>
+        <h2 id="totalCourses">0</h2>
+        <span>Courses assigned by admin</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">♧</div>
+        <p>Enrolled Students</p>
+        <h2 id="totalStudents">0</h2>
+        <span>Students in assigned courses</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">▣</div>
+        <p>Assignments</p>
+        <h2 id="totalAssignments">0</h2>
+        <span>Created assignments</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">◷</div>
+        <p>Attendance Records</p>
+        <h2 id="totalAttendance">0</h2>
+        <span>Marked attendance records</span>
+    </div>
+
+</section>
+
+
+        <!-- MY COURSES -->
+       
+<!-- MY COURSES -->
+<section class="content-section" id="courses">
+
+    <div class="section-heading">
+        <div>
+            <h2>My Courses</h2>
+            <p>Courses assigned to you by the administrator.</p>
+        </div>
+    </div>
+
+    <!-- Courses Table -->
+    <div class="table-container" id="coursesTableContainer"
+         style="display: none;">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Credit Hours</th>
+                    <th>Academic Session</th>
+                    <th>Course Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="coursesTableBody">
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="coursesEmptyState">
+
+        <div class="empty-icon">▤</div>
+
+        <h3>No Courses Assigned Yet</h3>
+
+        <p>
+            Your assigned courses will appear here.
+        </p>
+
+    </div>
+
+</section>
+
+
+        <!-- MY STUDENTS -->
+        <section class="content-section" id="students">
+
+            <div class="section-heading">
+                <div>
+                    <h2>My Students</h2>
+                    <p>Students enrolled in your assigned courses.</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Student Name</th>
+                            <th>Course</th>
+                            <th>Session</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="4" class="empty-table">
+                                No enrolled students available.
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+ 
+<!-- MARK ATTENDANCE -->
+<section class="content-section" id="mark-attendance">
+
+    <div class="section-heading">
+        <div>
+            <h2>Mark Attendance</h2>
+            <p>Record attendance for students in your assigned courses.</p>
+        </div>
+    </div>
+
+    <div class="action-card">
+
+        <div class="action-icon">◷</div>
+
+        <div class="action-content">
+            <h3>Student Attendance</h3>
+
+            <p>
+                Select your assigned course and mark
+                students as Present or Absent.
+            </p>
+        </div>
+
+        <button type="button" class="action-btn"
+            id="openAttendancePopup">
+            Mark Attendance
+        </button>
+
+    </div>
+
+    <div class="attendance-options">
+        <span class="status present">Present</span>
+        <span class="status absent">Absent</span>
+    </div>
+
+</section>
+
+
+<!-- ATTENDANCE POPUP -->
+<div id="attendancePopup" class="attendance-modal"
+     style="display: none;">
+
+    <div class="attendance-modal-content">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>Mark Student Attendance</h2>
+                <p>Record attendance for your enrolled students.</p>
+            </div>
+
+            <button type="button" id="closeAttendancePopup"
+                class="attendance-close-btn">
+                &times;
+            </button>
+
+        </div>
+
+        <!-- COURSE SELECTION -->
+
+        <div class="attendance-form-group">
+
+            <label for="attendanceCourse">Select Course</label>
+
+            <select id="attendanceCourse">
+                <option value="">Select Course</option>
+            </select>
+
+        </div>
+
+        <!-- DATE SELECTION -->
+
+        <div class="attendance-form-group">
+
+            <label for="attendanceDate">Attendance Date</label>
+
+            <input type="date" id="attendanceDate">
+
+        </div>
+
+        <!-- STUDENTS TABLE -->
+
+        <div class="table-container attendance-table">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Attendance</th>
+                    </tr>
+                </thead>
+
+                <tbody id="attendanceStudentsBody">
+
+                    <tr>
+                        <td colspan="3" class="empty-table">
+                            Select a course to load students.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="attendance-popup-actions">
+
+            <button type="button" id="cancelAttendanceBtn"
+                class="attendance-cancel-btn">
+                Cancel
+            </button>
+
+            <button type="button" id="saveAttendanceBtn"
+                class="action-btn">
+                Save Attendance
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+        <!-- ATTENDANCE RECORDS -->
+        <section class="content-section" id="attendance-records">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Attendance Records</h2>
+                    <p>Previously marked student attendance.</p>
+                </div>
+            </div>
+
+            <div class="empty-state">
+
+                <div class="empty-icon">◷</div>
+
+                <h3>No Attendance Records Yet</h3>
+
+                <p>
+                    Your recorded attendance will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+<!-- UPLOAD MARKS -->
+<section class="content-section" id="upload-marks">
+
+    <div class="section-heading">
+        <div>
+            <h2>Upload Marks</h2>
+            <p>Manage assessments and upload student marks.</p>
+        </div>
+
+        <button class="action-btn" id="openMarksPopup">
+            + Upload Marks
+        </button>
+    </div>
+
+    <div class="empty-state" id="marksEmptyState">
+        <div class="empty-icon">✎</div>
+        <h3>No Marks Uploaded Yet</h3>
+        <p>Marks uploaded for your courses will appear here.</p>
+    </div>
+
+    <div class="table-container" id="marksTableContainer" style="display: none;">
+
+        <table class="attendance-table">
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Assessment</th>
+                    <th>Total Marks</th>
+                    <th>Assessment Date</th>
+                </tr>
+            </thead>
+
+            <tbody id="marksRecordsBody">
+                <!-- Assessment records will load here -->
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+<!-- UPLOAD MARKS POPUP -->
+<div class="attendance-modal" id="marksPopup">
+
+    <div class="attendance-modal-content">
+
+        <button class="attendance-close-btn" id="closeMarksPopup">
+            &times;
+        </button>
+
+        <h2>Upload Student Marks</h2>
+        <p>Enter assessment details and student marks.</p>
+
+        <form id="marksForm">
+
+            <!-- COURSE -->
+            <div class="attendance-form-group">
+                <label for="marksCourse">Select Course</label>
+
+                <select id="marksCourse" required>
+                    <option value="">Select Course</option>
+                </select>
+            </div>
+
+            <!-- ASSESSMENT TYPE -->
+            <div class="attendance-form-group">
+                <label for="assessmentType">Assessment Type</label>
+
+                <select id="assessmentType" required>
+                    <option value="">Select Type</option>
+                    <option value="quiz">Quiz</option>
+                    <option value="assignment">Assignment</option>
+                    <option value="midterm">Midterm</option>
+                    <option value="final">Final</option>
+                </select>
+            </div>
+
+            <!-- ASSESSMENT TITLE -->
+            <div class="attendance-form-group">
+                <label for="assessmentTitle">Assessment Title</label>
+
+                <input
+                    type="text"
+                    id="assessmentTitle"
+                    placeholder="e.g. Quiz 1"
+                    required
+                >
+            </div>
+
+            <!-- TOTAL MARKS -->
+            <div class="attendance-form-group">
+                <label for="totalMarks">Total Marks</label>
+
+                <input
+                    type="number"
+                    id="totalMarks"
+                    min="1"
+                    step="0.5"
+                    placeholder="Enter total marks"
+                    required
+                >
+            </div>
+
+            <!-- ASSESSMENT DATE -->
+            <div class="attendance-form-group">
+                <label for="assessmentDate">Assessment Date</label>
+
+                <input
+                    type="date"
+                    id="assessmentDate"
+                    required
+                >
+            </div>
+
+            <!-- STUDENT MARKS -->
+            <div class="attendance-form-group">
+
+                <h3>Student Marks</h3>
+
+                <div class="table-container">
+
+                    <table class="attendance-table">
+
+                        <thead>
+                            <tr>
+                                <th>Registration No</th>
+                                <th>Student Name</th>
+                                <th>Obtained Marks</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="studentMarksBody">
+
+                            <tr>
+                                <td colspan="3">
+                                    Select a course to load enrolled students.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="attendance-popup-actions">
+
+                <button
+                    type="button"
+                    class="attendance-cancel-btn"
+                    id="cancelMarksPopup">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="action-btn"
+                    id="saveMarksBtn">
+                    Save Marks
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+      
+<!-- ASSIGNMENTS -->
+<section class="content-section" id="assignments">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Assignments</h2>
+            <p>Manage assignments for your assigned courses.</p>
+        </div>
+
+        <a href="#create-assignment" class="action-btn" id="openAssignmentModal">
+            + Create Assignment
+        </a>
+
+    </div>
+
+    <!-- ASSIGNMENT LIST -->
+    <div id="assignmentList">
+
+        <div class="empty-state" id="assignmentEmptyState">
+
+            <div class="empty-icon">▣</div>
+
+            <h3>No Assignments Created Yet</h3>
+
+            <p>
+                Your created assignments will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CREATE ASSIGNMENT POPUP -->
+    <div class="attendance-modal" id="assignmentModal" style="display: none;">
+
+        <div class="attendance-modal-content">
+
+            <div class="section-heading">
+
+                <h3>Create Assignment</h3>
+
+                <button type="button" class="attendance-close-btn" id="closeAssignmentModal">
+                    &times;
+                </button>
+
+            </div>
+
+            <!-- Existing assignment form -->
+            <div class="assignment-form" id="create-assignment">
+
+                <form id="assignmentForm">
+
+                    <div class="form-group">
+                        <label for="assignment-course">Select Course</label>
+
+                        <select id="assignment-course" name="offering_id" required>
+                            <option value="">Select Assigned Course</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="assignment-title">Assignment Title</label>
+
+                        <input
+                            type="text"
+                            id="assignment-title"
+                            name="title"
+                            placeholder="Enter assignment title"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="assignment-description">
+                            Assignment Description
+                        </label>
+
+                        <textarea
+                            id="assignment-description"
+                            name="description"
+                            rows="4"
+                            placeholder="Enter assignment details">
+                        </textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="assignment-file">Upload Assignment</label>
+
+                        <input
+                            type="file"
+                            id="assignment-file"
+                            name="assignment_file">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="assignment-date">Due Date</label>
+
+                        <input
+                            type="datetime-local"
+                            id="assignment-date"
+                            name="due_date"
+                            required>
+                    </div>
+
+
+                    <button type="submit" class="submit-btn">
+                        Create Assignment
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SUBMITTED ASSIGNMENTS -->
+<section class="content-section" id="submitted-assignments">
+
+    <div class="section-heading">
+        <div>
+            <h2>Submitted Assignments</h2>
+            <p>View assignments submitted by your students</p>
+        </div>
+    </div>
+
+    <div id="submittedAssignmentsList">
+
+        <div class="teacher-submissions-table-wrapper">
+            <table class="teacher-submissions-table">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Assignment</th>
+                        <th>Student Name</th>
+                        <th>Registration No.</th>
+                        <th>Submitted File</th>
+                        <th>Submitted At</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="submittedAssignmentsTableBody">
+                    <tr>
+                        <td colspan="7">Loading submissions...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ANNOUNCEMENTS -->
+
+<section class="content-section" id="announcements">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Announcements</h2>
+            <p>Manage announcements for students in your assigned courses.</p>
+        </div>
+
+        <button type="button" class="submit-btn" id="addAnnouncementBtn">
+            <i class="fa-solid fa-plus"></i>
+            Add Announcement
+        </button>
+
+    </div>
+
+
+    <!-- PUBLISHED ANNOUNCEMENTS -->
+
+    <div class="announcements-list">
+
+        <h3>Published Announcements</h3>
+
+        <div id="teacherAnnouncementsList">
+
+            <div class="empty-state">
+                <p>No announcements published yet.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CREATE ANNOUNCEMENT POPUP -->
+
+<div class="offering-modal" id="announcementModal">
+
+    <div class="offering-modal-content">
+
+        <div class="modal-header">
+
+            <h3>Create Announcement</h3>
+
+            <button
+                type="button"
+                class="close-btn"
+                id="closeAnnouncementBtn">
+                &times;
+            </button>
+
+        </div>
+
+
+        <form id="announcementForm">
+
+            <div class="form-group">
+
+                <label for="announcement-course">
+                    Select Course
+                </label>
+
+                <select id="announcement-course" name="offering_id" required>
+
+                    <option value="">Select Assigned Course</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="announcement-title">
+                    Announcement Title
+                </label>
+
+                <input
+                    type="text"
+                    id="announcement-title"
+                    name="title"
+                    placeholder="Enter announcement title"
+                    maxlength="150"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="announcement-message">
+                    Announcement Message
+                </label>
+
+                <textarea
+                    id="announcement-message"
+                    name="message"
+                    rows="5"
+                    placeholder="Write your announcement..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelAnnouncementBtn">
+                    Cancel
+                </button>
+
+                <button type="submit" class="submit-btn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Publish Announcement
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+        <!-- TIMETABLE -->
+        <section class="content-section" id="timetable">
+
+            <div class="section-heading">
+                <div>
+                    <h2>My Timetable</h2>
+                    <p>Your assigned courses schedule.</p>
+                </div>
+            </div>
+
+            <div id="teacherTimetableList">
+
+    <div class="empty-state">
+        <div class="empty-icon">▦</div>
+
+        <h3>Loading Timetable...</h3>
+
+        <p>Please wait while your timetable loads.</p>
+    </div>
+
+</div>
+
+        </section>
+
+
+        <!-- NOTIFICATIONS -->
+        <section class="content-section" id="notifications">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Notifications</h2>
+                    <p>Latest system updates and notifications.</p>
+                </div>
+            </div>
+
+<div class="notification-list" id="teacherNotificationsList">
+
+    <div class="notification-item">
+        <div>
+            <h4>Loading Notifications...</h4>
+            <p>Please wait while notifications load.</p>
+        </div>
+    </div>
+
+</div>
+                  
+                  
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <p>© 2026 Summer Enrollment Management System</p>
+
+            <p>Teacher Portal</p>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+<script src="../js/teacher.js"></script>
+
+</body>
+</html>

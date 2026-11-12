@@ -1,0 +1,302 @@
+
+/* =========================
+   GLOBAL STYLING
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.login-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            rgba(55, 42, 31, 0.40),
+            rgba(55, 42, 31, 0.50)
+        ),
+        url("../images/beige-bg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+    width: 100%;
+    max-width: 410px;
+
+    padding: 38px 35px;
+
+    background: rgba(248, 243, 234, 0.93);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 16px;
+
+    box-shadow: 0 12px 35px rgba(35, 25, 18, 0.25);
+}
+
+
+/* =========================
+   BRAND HEADER
+========================= */
+
+.brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand h1 {
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: #49372c;
+}
+
+.brand-tagline {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #887666;
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome {
+    text-align: center;
+    margin-bottom: 27px;
+}
+
+.welcome h2 {
+    font-size: 25px;
+    color: #49372c;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    font-size: 13px;
+    color: #8a7a6c;
+}
+
+
+/* =========================
+   FORM INPUTS
+========================= */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: #554438;
+}
+
+.form-group input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 14px;
+
+    background: #fffdf9;
+
+    border: 1px solid #d9cbbb;
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 13px;
+    color: #49372c;
+
+    transition: 0.3s;
+}
+
+.form-group input::placeholder {
+    color: #aa9b8e;
+}
+
+.form-group input:focus {
+    border-color: #92745c;
+    box-shadow: 0 0 0 3px rgba(146, 116, 92, 0.12);
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+.forgot-password {
+    text-align: right;
+    margin: 4px 0 22px;
+}
+
+.forgot-password a {
+    font-size: 12px;
+    color: #80634f;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+    color: #49372c;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+    width: 100%;
+    height: 48px;
+
+    background: #6f5542;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #49372c;
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(73, 55, 44, 0.20);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.login-footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 17px;
+
+    border-top: 1px solid #e3d8cb;
+}
+
+.login-footer p {
+    font-size: 11px;
+    color: #9a8877;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+
+    .login-container {
+        padding: 20px;
+    }
+
+    .login-card {
+        max-width: 390px;
+        padding: 33px 28px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 480px) {
+
+    .login-container {
+        padding: 16px;
+        background-position: center;
+    }
+
+    .login-card {
+        padding: 30px 22px;
+        border-radius: 13px;
+    }
+
+    .brand h1 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .brand-tagline {
+        font-size: 11px;
+    }
+
+    .welcome h2 {
+        font-size: 22px;
+    }
+
+    .form-group input {
+        height: 46px;
+    }
+
+    .login-btn {
+        height: 46px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+    .login-card {
+        padding: 25px 17px;
+    }
+
+    .brand h1 {
+        font-size: 21px;
+    }
+
+    .brand-tagline {
+        font-size: 10px;
+    }
+
+}

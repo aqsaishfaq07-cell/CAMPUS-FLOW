@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | Summer Enrollment</title>
+
+    <link rel="stylesheet" href="../css/student-dashboard.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">SE</div>
+            <div>
+                <h2>SummerEnroll</h2>
+                <p>Student Portal</p>
+            </div>
+        </div>
+
+        <div class="sidebar-menu">
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <a href="#dashboard" class="menu-item active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#enrollment" class="menu-item">
+                <span>＋</span> Course Enrollment
+            </a>
+
+            <a href="#courses" class="menu-item">
+                <span>▤</span> My Courses
+            </a>
+
+            <p class="menu-heading">ACADEMICS</p>
+
+            <a href="#attendance" class="menu-item">
+                <span>◷</span> Attendance
+            </a>
+
+            <a href="#assignments" class="menu-item">
+                <span>▧</span> Assignments
+            </a>
+            <a href="#grades" class="menu-item">
+    <span>▣</span> My Grades
+</a>
+
+            <a href="#notifications" class="menu-item">
+                <span>♧</span> Notifications
+                <span class="notification-count" id="sidebarNotificationCount">0</span>
+            </a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+            <a href="index.html" class="logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content" id="dashboard">
+
+        <!-- Top Header -->
+        <header class="top-header">
+
+            <div class="header-left">
+                <h2>Student Dashboard</h2>
+                <p>Welcome back! Here's your academic overview.</p>
+            </div>
+
+            <div class="header-right">
+
+                <a href="#notifications" class="notification-icon">
+                    ♧
+                   <span id="headerNotificationCount"></span>
+                </a>
+
+                <div class="header-profile">
+                    <div class="avatar">S</div>
+                    <div>
+                        <h4>Student Name</h4>
+                        <p>Student</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+
+            <div>
+                <p class="welcome-label">STUDENT PORTAL</p>
+                <h1>Welcome, Student!</h1>
+                <p>Manage your summer enrollment and academic activities.</p>
+            </div>
+
+            <div class="session-badge">
+                <span>Academic Session</span>
+                <h3>2023 - 2027</h3>
+            </div>
+
+        </section>
+
+
+        <!-- Student Information -->
+        <section class="student-info-section">
+
+            <div class="section-heading">
+                <h2>Student Information</h2>
+            </div>
+
+            <div class="info-card">
+
+                <div class="info-item">
+                    <span>Student ID</span>
+                    <h3>Student ID</h3>
+                </div>
+
+                <div class="info-item">
+                    <span>Student Name</span>
+                    <h3>Student Name</h3>
+                </div>
+
+                <div class="info-item">
+                    <span>Academic Session</span>
+                    <h3>2023 - 2027</h3>
+                </div>
+
+                <div class="info-item">
+                    <span>Department</span>
+                    <h3>Department Name</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+
+       <!-- Statistics -->
+<section class="stats-grid">
+
+    <div class="stat-card">
+        <div class="stat-icon">▤</div>
+        <p>Enrolled Subjects</p>
+        <h2 id="enrolledSubjectsCount">0</h2>
+        <span>Current session</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">◷</div>
+        <p>Credit Hours</p>
+        <h2 id="creditHoursCount">0 / 9</h2>
+        <span>Maximum allowed credits</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">▧</div>
+        <p>Assignments</p>
+        <h2 id="assignmentCount">0</h2>
+        <span>Assigned assignments</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">♧</div>
+        <p>Notifications</p>
+        <h2 id="notificationCount">0</h2>
+        <span>Recent notifications</span>
+    </div>
+
+</section>
+
+
+        <!-- Enrollment Section -->
+        <section class="content-section" id="enrollment">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Course Enrollment</h2>
+                    <p>Explore subjects available for your academic session.</p>
+                </div>
+
+                <a href="#enrollment" class="view-link">View All →</a>
+            </div>
+
+            <div class="enrollment-card">
+
+                <div class="enrollment-content">
+
+    <!-- PAYMENT STATUS MESSAGE -->
+    <div id="paymentStatusMessage"></div>
+
+    <span class="tag">SUMMER SESSION</span>
+
+                    <h2>Enroll in Summer Courses</h2>
+
+                    <p>
+                        Select eligible subjects according to your
+                        academic session and available credit hours.
+                    </p>
+
+                    <div class="enrollment-details">
+                        <div>
+                            <span>Academic Session</span>
+                            <strong>2023 - 2027</strong>
+                        </div>
+
+                        <div>
+                            <span>Credit Hour Limit</span>
+                            <strong>9 Credit Hours</strong>
+                        </div>
+                    </div>
+
+                   <button type="button" class="primary-btn" id="openExploreCourses">
+    Explore Courses
+</button>
+                </div>
+
+                <div class="enrollment-decoration">
+                    <div class="book-icon">▤</div>
+                    <span>SUMMER</span>
+                    <h3>Learn & Grow</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- My Courses -->
+        <section class="content-section" id="courses">
+
+            <div class="section-heading">
+                <div>
+                    <h2>My Courses</h2>
+                    <p>Your enrolled summer subjects.</p>
+                </div>
+            </div>
+
+            <div class="empty-state">
+                <div class="empty-icon">▤</div>
+                <h3>No Courses Enrolled Yet</h3>
+                <p>Your enrolled subjects will appear here after enrollment.</p>
+                <a href="#enrollment" class="text-link">Go to Course Enrollment</a>
+            </div>
+
+        </section>
+
+
+        <!-- Attendance and Assignments -->
+        <section class="two-column-grid">
+
+            <div class="content-section" id="attendance">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Attendance</h2>
+                        <p>Your course attendance records.</p>
+                    </div>
+                </div>
+
+                <div class="empty-state small-empty">
+                    <div class="empty-icon">◷</div>
+                    <h3>No Attendance Records</h3>
+                    <p>Attendance will appear here for enrolled courses.</p>
+                </div>
+
+            </div>
+
+
+            <div class="content-section" id="assignments">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Assignments</h2>
+                        <p>Assignments from your teachers.</p>
+                    </div>
+                </div>
+
+                <div class="empty-state small-empty">
+                    <div class="empty-icon">▧</div>
+                    <h3>No Assignments Yet</h3>
+                    <p>Assignments will appear after course enrollment.</p>
+                </div>
+
+            </div>
+
+        </section>
+<!-- View Grades -->
+<section class="content-section" id="grades">
+
+   <div class="marks-filter">
+    <label for="marksSubjectFilter">Select Subject</label>
+
+    <select id="marksSubjectFilter">
+        <option value="">All Subjects</option>
+    </select>
+</div>
+
+    <div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Subject</th>
+                <th>Assessment</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Obtained Marks</th>
+                <th>Total Marks</th>
+                <th>Percentage</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentMarksTable">
+            <tr>
+                <td colspan="9">Loading marks...</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</section>
+
+        <!-- Notifications -->
+       
+<section class="content-section" id="notifications">
+
+    <div class="notification-buttons">
+    <button type="button" id="showAdminNotifications" class="primary-btn">
+        Admin Notifications
+    </button>
+
+    <button type="button" id="showTeacherNotifications" class="primary-btn">
+        Teacher Notifications
+    </button>
+</div>
+
+</section>
+
+
+<!-- =====================================
+     EXPLORE COURSES POPUP
+===================================== -->
+
+<div class="modal-overlay" id="exploreCoursesModal">
+
+    <div class="modal-container explore-modal">
+
+        <button type="button" class="modal-close" id="closeExploreCourses">
+            &times;
+        </button>
+
+        <div class="page-intro">
+            <span>COURSE ENROLLMENT</span>
+            <h1>Explore Available Courses</h1>
+            <p>Select your eligible summer courses according to your academic session.</p>
+        </div>
+
+        <!-- STUDENT SUMMARY -->
+        <section class="student-summary">
+
+            <div class="summary-info">
+                <span>Student Name</span>
+                <h3 id="exploreStudentName">Student Name</h3>
+            </div>
+
+            <div class="summary-info">
+                <span>Student ID</span>
+                <h3 id="exploreStudentId">Student ID</h3>
+            </div>
+
+            <div class="summary-info">
+                <span>Academic Session</span>
+                <h3 id="exploreStudentSession">Academic Session</h3>
+            </div>
+
+            <div class="summary-info">
+                <span>Maximum Credit Hours</span>
+                <h3 id="exploreCreditLimit">0 Credit Hours</h3>
+            </div>
+
+        </section>
+
+        <!-- AVAILABLE COURSES -->
+        <section class="courses-section">
+
+            <div class="section-title">
+                <div>
+                    <h2>Available Courses</h2>
+                    <p>Select the courses you want to enroll in.</p>
+                </div>
+
+                <span class="course-label">Summer Session</span>
+            </div>
+
+            <div class="courses-grid" id="availableCoursesList">
+
+                <!-- Courses will load from database here -->
+
+                <div class="empty-state">
+                    <div class="empty-icon">▤</div>
+                    <h3>Loading Courses...</h3>
+                    <p>Please wait while available courses load.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CREDIT ERROR -->
+        <div class="validation-message" id="credit-error">
+            <strong>Credit Hour Limit Exceeded!</strong>
+            <p>You cannot select courses exceeding your maximum credit-hour limit. Your last selected course has been removed.</p>
+        </div>
+
+        <!-- ENROLLMENT SUMMARY -->
+        <section class="enrollment-summary">
+
+            <div class="summary-heading">
+                <div>
+                    <h2>Enrollment Summary</h2>
+                    <p>Review your selected courses before submission.</p>
+                </div>
+
+                <span class="summary-tag">Review Details</span>
+            </div>
+
+            <div class="selected-courses">
+
+                <h3>Selected Courses</h3>
+
+                <div id="selectedCoursesList">
+                    <p class="no-selection">No courses selected yet.</p>
+                </div>
+
+            </div>
+
+            <div class="calculation-box">
+
+                <div class="calculation-row">
+                    <span>Selected Courses</span>
+                    <strong id="selectedCourseCount">0</strong>
+                </div>
+
+                <div class="calculation-row">
+                    <span>Total Credit Hours</span>
+                    <strong id="selectedCreditHours">0 / 0</strong>
+                </div>
+
+                <div class="calculation-row">
+                    <span>Fee Per Course</span>
+                    <strong>Rs. 5,000</strong>
+                </div>
+
+                <div class="calculation-row total-fee">
+                    <span>Total Fee</span>
+                    <strong id="totalEnrollmentFee">Rs. 0</strong>
+                </div>
+
+            </div>
+
+            <div class="submit-area">
+
+                <p>Review your course selection and total fee before proceeding.</p>
+
+                <button type="button" class="submit-btn" id="openFeeVerification" disabled>
+                    Proceed to Fee Payment →
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     FEE VERIFICATION POPUP
+===================================== -->
+
+<div class="modal-overlay" id="feeVerificationModal">
+
+    <div class="modal-container fee-modal">
+
+        <button type="button" class="modal-close" id="closeFeeVerification">
+            &times;
+        </button>
+
+        <div class="page-heading">
+            <span class="step-label">STEP 2 OF 2</span>
+            <h1>Fee Verification</h1>
+            <p>Upload your payment proof to complete your enrollment.</p>
+        </div>
+
+        <div class="content-grid">
+
+            <!-- PAYMENT INSTRUCTIONS -->
+            <section class="instructions-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <h2>Payment Instructions</h2>
+
+                <p class="description">
+                    Complete your fee payment and upload a clear screenshot or receipt.
+                </p>
+
+                <div class="payment-detail">
+                    <span>Account Title</span>
+                    <strong>Summer Enrollment</strong>
+                </div>
+
+                <div class="payment-detail">
+                    <span>Bank Name</span>
+                    <strong>Your Bank Name</strong>
+                </div>
+
+                <div class="payment-detail">
+                    <span>Account / IBAN</span>
+                    <strong>XXXX-XXXX-XXXX</strong>
+                </div>
+
+                <div class="payment-detail">
+                    <span>Selected Courses</span>
+                    <strong id="feeCourseCount">0 Courses</strong>
+                </div>
+
+                <div class="payment-detail">
+                    <span>Total Payable Fee</span>
+                    <strong class="fee" id="feeTotalAmount">Rs. 0</strong>
+                </div>
+
+                <div class="notice">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>Pay the correct amount before submitting your payment proof.</p>
+                </div>
+
+            </section>
+
+
+            <!-- PAYMENT UPLOAD FORM -->
+            <section class="upload-card">
+
+                <h2>Upload Payment Proof</h2>
+
+                <p class="description">
+                    Enter your transaction details and attach your receipt.
+                </p>
+
+                <form id="feeProofForm" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label for="studentId">Student ID</label>
+
+                        <input type="text"
+                               id="studentId"
+                               name="studentId"
+                               placeholder="Student ID"
+                               readonly
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transactionId">Transaction ID</label>
+
+                        <input type="text"
+                               id="transactionId"
+                               name="transactionId"
+                               placeholder="Enter transaction ID"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentDate">Payment Date</label>
+
+                        <input type="date"
+                               id="paymentDate"
+                               name="paymentDate"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="">Select payment method</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                            <option value="JazzCash">JazzCash</option>
+                            <option value="EasyPaisa">EasyPaisa</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Payment Receipt / Screenshot</label>
+
+                        <label for="proof" class="upload-area">
+
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                            <strong>Click to upload your receipt</strong>
+
+                            <span>PNG, JPG or PDF (Maximum 5 MB)</span>
+
+                            <input type="file"
+                                   id="proof"
+                                   name="proof"
+                                   accept=".png,.jpg,.jpeg,.pdf"
+                                   required>
+
+                        </label>
+
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Submit for Verification
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+                <div class="security-note">
+                    <i class="fa-solid fa-lock"></i>
+                    Your payment information will be submitted for admin verification.
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 Summer Enrollment Management System</p>
+            <p>Student Portal</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- STUDENT NOTIFICATIONS POPUP -->
+<div class="modal-overlay" id="studentNotificationsModal">
+
+    <div class="modal-container notification-modal">
+
+        <div class="modal-header">
+            <h2 id="studentNotificationsModalTitle">
+                Notifications
+            </h2>
+
+            <button type="button" id="closeStudentNotifications">
+                &times;
+            </button>
+        </div>
+
+        <div id="studentNotificationsModalList">
+            <p>No notifications available.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/student.js"></script>
+</body>
+</html>

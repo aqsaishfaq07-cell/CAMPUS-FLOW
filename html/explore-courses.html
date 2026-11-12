@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Courses | Student Portal</title>
+
+    <link rel="stylesheet" href="../css/explore-courses.css">
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <!-- Header -->
+    <header class="page-header">
+        <div>
+            <h2>SummerEnroll</h2>
+            <p>Student Portal</p>
+        </div>
+
+        <a href="student-dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+    </header>
+
+
+    <!-- Page Introduction -->
+    <section class="page-intro">
+        <span>COURSE ENROLLMENT</span>
+        <h1>Explore Available Courses</h1>
+        <p>
+            Select your eligible summer courses according
+            to your academic session.
+        </p>
+    </section>
+
+
+    <!-- Student Enrollment Information -->
+    <section class="student-summary">
+
+        <div class="summary-info">
+            <span>Student Name</span>
+            <h3>Student Name</h3>
+        </div>
+
+        <div class="summary-info">
+            <span>Student ID</span>
+            <h3>Student ID</h3>
+        </div>
+
+        <div class="summary-info">
+            <span>Academic Session</span>
+            <h3>2023 - 2027</h3>
+        </div>
+
+        <div class="summary-info">
+            <span>Maximum Credit Hours</span>
+            <h3>9 Credit Hours</h3>
+        </div>
+
+    </section>
+
+
+    <!-- Available Courses -->
+    <section class="courses-section">
+
+        <div class="section-title">
+            <div>
+                <h2>Available Courses</h2>
+                <p>Select the courses you want to enroll in.</p>
+            </div>
+
+            <span class="course-label">Summer Session</span>
+        </div>
+
+
+        <div class="courses-grid">
+
+            <!-- Course 1 -->
+            <div class="course-card">
+
+                <div class="course-top">
+                    <span class="course-code">COURSE 01</span>
+                    <span class="available">Available</span>
+                </div>
+
+                <h3>Course / Subject Name</h3>
+
+                <p class="course-description">
+                    Eligible subject for your academic session.
+                </p>
+
+                <div class="course-details">
+                    <div>
+                        <span>Credit Hours</span>
+                        <strong>3 Hours</strong>
+                    </div>
+
+                    <div>
+                        <span>Course Fee</span>
+                        <strong>Rs. 5,000</strong>
+                    </div>
+                </div>
+
+                <label class="select-course">
+                    <input type="checkbox" name="course" value="course1">
+                    <span>Select Course</span>
+                </label>
+
+            </div>
+
+
+            <!-- Course 2 -->
+            <div class="course-card">
+
+                <div class="course-top">
+                    <span class="course-code">COURSE 02</span>
+                    <span class="available">Available</span>
+                </div>
+
+                <h3>Course / Subject Name</h3>
+
+                <p class="course-description">
+                    Eligible subject for your academic session.
+                </p>
+
+                <div class="course-details">
+                    <div>
+                        <span>Credit Hours</span>
+                        <strong>2 Hours</strong>
+                    </div>
+
+                    <div>
+                        <span>Course Fee</span>
+                        <strong>Rs. 5,000</strong>
+                    </div>
+                </div>
+
+                <label class="select-course">
+                    <input type="checkbox" name="course" value="course2">
+                    <span>Select Course</span>
+                </label>
+
+            </div>
+
+
+            <!-- Course 3 -->
+            <div class="course-card">
+
+                <div class="course-top">
+                    <span class="course-code">COURSE 03</span>
+                    <span class="available">Available</span>
+                </div>
+
+                <h3>Course / Subject Name</h3>
+
+                <p class="course-description">
+                    Eligible subject for your academic session.
+                </p>
+
+                <div class="course-details">
+                    <div>
+                        <span>Credit Hours</span>
+                        <strong>1 Hour</strong>
+                    </div>
+
+                    <div>
+                        <span>Course Fee</span>
+                        <strong>Rs. 5,000</strong>
+                    </div>
+                </div>
+
+                <label class="select-course">
+                    <input type="checkbox" name="course" value="course3">
+                    <span>Select Course</span>
+                </label>
+
+            </div>
+
+
+            <!-- Course 4 -->
+            <div class="course-card">
+
+                <div class="course-top">
+                    <span class="course-code">COURSE 04</span>
+                    <span class="available">Available</span>
+                </div>
+
+                <h3>Course / Subject Name</h3>
+
+                <p class="course-description">
+                    Eligible subject for your academic session.
+                </p>
+
+                <div class="course-details">
+                    <div>
+                        <span>Credit Hours</span>
+                        <strong>3 Hours</strong>
+                    </div>
+
+                    <div>
+                        <span>Course Fee</span>
+                        <strong>Rs. 5,000</strong>
+                    </div>
+                </div>
+
+                <label class="select-course">
+                    <input type="checkbox" name="course" value="course4">
+                    <span>Select Course</span>
+                </label>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Credit Hours Error Message -->
+    <div class="validation-message" id="credit-error">
+        <strong>Credit Hour Limit Exceeded!</strong>
+        <p>
+            You cannot select courses exceeding the maximum
+            limit of 9 credit hours. Please adjust your selection.
+        </p>
+    </div>
+
+
+    <!-- Enrollment Summary -->
+    <section class="enrollment-summary">
+
+        <div class="summary-heading">
+            <div>
+                <h2>Enrollment Summary</h2>
+                <p>Review your selected courses before submission.</p>
+            </div>
+
+            <span class="summary-tag">Review Details</span>
+        </div>
+
+
+        <!-- Selected Courses List -->
+        <div class="selected-courses">
+
+            <h3>Selected Courses</h3>
+
+            <p class="no-selection">
+                No courses selected yet.
+            </p>
+
+        </div>
+
+
+        <!-- Total Calculation -->
+        <div class="calculation-box">
+
+            <div class="calculation-row">
+                <span>Selected Courses</span>
+                <strong>0</strong>
+            </div>
+
+            <div class="calculation-row">
+                <span>Total Credit Hours</span>
+                <strong>0 / 9</strong>
+            </div>
+
+            <div class="calculation-row">
+                <span>Fee Per Course</span>
+                <strong>Rs. 5,000</strong>
+            </div>
+
+            <div class="calculation-row total-fee">
+                <span>Total Fee</span>
+                <strong>Rs. 0</strong>
+            </div>
+
+        </div>
+
+
+        <!-- Submit Enrollment -->
+        <div class="submit-area">
+
+            <p>
+                Please review your course selection and total fee
+                before submitting your enrollment.
+            </p>
+
+            <button type="button" class="submit-btn">
+                Submit Enrollment →
+            </button>
+
+        </div>
+
+
+        <!-- Pending Approval Message -->
+        <div class="pending-message" id="pending-message">
+
+            <div class="pending-icon">!</div>
+
+            <div>
+                <h3>Enrollment Submitted Successfully!</h3>
+
+                <p>
+                    Your enrollment is pending admin approval.
+                    Your courses will be confirmed after admin verification.
+                </p>
+
+                <span class="pending-status">
+                    Pending Admin Approval
+                </span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <p>© 2026 Summer Enrollment Management System</p>
+        <p>Student Portal</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

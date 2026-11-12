@@ -1,0 +1,1935 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Summer Enrollment</title>
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div>
+                <h2>Summer Portal</h2>
+                <span>Administration</span>
+            </div>
+        </div>
+
+        <div class="admin-profile">
+            <div class="profile-avatar">A</div>
+            <div>
+                <h3>Admin</h3>
+                <p>System Administrator</p>
+            </div>
+        </div>
+
+        <div class="sidebar-nav">
+
+            <p class="nav-heading">MAIN MENU</p>
+
+            <a href="#overview" class="active">
+                <i class="fa-solid fa-chart-pie"></i> Overview
+            </a>
+
+            <a href="#fee-verification">
+                <i class="fa-solid fa-money-check-dollar"></i>
+                Fee Verification
+            </a>
+
+            <a href="#enrollments">
+                <i class="fa-solid fa-file-circle-check"></i>
+                Enrollment Applications
+            </a>
+
+            <p class="nav-heading">MANAGEMENT</p>
+
+            <a href="#students">
+                <i class="fa-solid fa-user-graduate"></i> Students
+            </a>
+
+            <a href="#teachers">
+                <i class="fa-solid fa-chalkboard-user"></i> Teachers
+            </a>
+
+            <a href="#departments">
+                <i class="fa-solid fa-building"></i> Departments
+            </a>
+
+            <a href="#sessions">
+                <i class="fa-solid fa-calendar-days"></i> Sessions
+            </a>
+
+            <a href="#subjects">
+                <i class="fa-solid fa-book-open"></i> Subjects
+            </a>
+
+            <a href="#offerings">
+                <i class="fa-solid fa-book"></i> Course Offerings
+            </a>
+
+            <p class="nav-heading">ACADEMIC</p>
+
+            <a href="#timetable">
+                <i class="fa-solid fa-calendar-week"></i> Timetable
+            </a>
+
+            <p class="nav-heading">OTHER</p>
+
+            <a href="#announcements">
+                <i class="fa-solid fa-bullhorn"></i> Announcements
+            </a>
+
+
+            <a href="#activity">
+                <i class="fa-solid fa-clock-rotate-left"></i> Activity Logs
+            </a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+            <a href="index.html" class="logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN AREA -->
+    <main class="main-area">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar-title">
+                <h1>Admin Dashboard</h1>
+                <p>Welcome back! Manage your summer enrollment system.</p>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="notification-btn" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="top-admin">
+                    <div class="small-avatar">A</div>
+                    <span>Administrator</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <div class="dashboard-content">
+
+            <!-- OVERVIEW -->
+            <section id="overview">
+
+                <div class="section-title">
+                    <div>
+                        <h2>Overview</h2>
+                        <p>Here's what's happening in your system.</p>
+                    </div>
+
+                    <span class="session-badge">Summer Session 2026</span>
+                </div>
+
+                <!-- STATISTICS -->
+               <div class="stats-grid">
+
+    <div class="stat-card">
+        <div class="stat-icon students-icon">
+            <i class="fa-solid fa-user-graduate"></i>
+        </div>
+        <div>
+            <p>Total Students</p>
+            <h2 id="totalStudentsCount">450</h2>
+            <span>Registered students</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon teachers-icon">
+            <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <div>
+            <p>Total Teachers</p>
+            <h2 id="totalTeachersCount">28</h2>
+            <span>Active teachers</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon courses-icon">
+            <i class="fa-solid fa-book-open"></i>
+        </div>
+        <div>
+            <p>Total Subjects</p>
+            <h2 id="totalSubjectsCount">35</h2>
+            <span>Available subjects</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon pending-icon">
+            <i class="fa-solid fa-clock"></i>
+        </div>
+        <div>
+            <p>Pending Payments</p>
+            <h2 id="pendingPaymentsCount">05</h2>
+            <span>Need verification</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon enrollment-icon">
+            <i class="fa-solid fa-file-circle-check"></i>
+        </div>
+        <div>
+            <p>Enrollments</p>
+            <h2 id="totalEnrollmentsCount">320</h2>
+            <span>Submitted applications</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon approved-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div>
+            <p>Approved</p>
+            <h2 id="approvedEnrollmentsCount">285</h2>
+            <span>Confirmed enrollments</span>
+        </div>
+    </div>
+
+</div>
+
+                <!-- QUICK ACTIONS -->
+                <div class="quick-actions">
+
+                    <h3>Quick Actions</h3>
+
+                    <div class="action-grid">
+
+                        <a href="#fee-verification">
+                            <i class="fa-solid fa-money-check-dollar"></i>
+                            <span>Verify Payments</span>
+                        </a>
+
+                        <a href="#students">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>View Students</span>
+                        </a>
+
+                        <a href="#subjects">
+                            <i class="fa-solid fa-book-medical"></i>
+                            <span>Manage Subjects</span>
+                        </a>
+
+                        <a href="#teachers">
+                            <i class="fa-solid fa-user-tie"></i>
+                            <span>Manage Teachers</span>
+                        </a>
+
+                        <a href="#announcements">
+                            <i class="fa-solid fa-bullhorn"></i>
+                            <span>Post Announcement</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+          
+<!-- DEPARTMENTS -->
+
+<!
+<!-- DEPARTMENT MANAGEMENT -->
+<section id="departments" class="content-section">
+
+    <div class="section-title">
+        <div>
+            <h2>Department Management</h2>
+            <p>Manage academic departments in the system.</p>
+        </div>
+    </div>
+
+    <div class="section-actions">
+
+        <button class="primary-btn" id="addDepartmentBtn">
+            <i class="fa-solid fa-plus"></i> Add Department
+        </button>
+
+        <button type="button" id="viewDepartmentsBtn" class="view-btn">
+            View Departments
+        </button>
+
+    </div>
+
+    <!-- VIEW DEPARTMENTS POPUP -->
+    <div class="offering-modal" id="departmentsViewModal">
+
+        <div class="offering-modal-content">
+
+            <div class="offering-modal-header">
+                <div>
+                    <h2>Academic Departments</h2>
+                    <p>View and manage all academic departments.</p>
+                </div>
+
+                <button type="button" class="modal-close"
+                    id="closeDepartmentsViewBtn">
+                    &times;
+                </button>
+            </div>
+
+            <div class="simple-grid" id="departmentsGrid">
+
+                <div class="management-card">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>Software Engineering</h3>
+                    <p>Department of Software Engineering</p>
+                    <button class="view-btn">Manage</button>
+                </div>
+
+                <div class="management-card">
+                    <i class="fa-solid fa-computer"></i>
+                    <h3>Computer Science</h3>
+                    <p>Department of Computer Science</p>
+                    <button class="view-btn">Manage</button>
+                </div>
+
+                <div class="management-card">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <h3>Information Technology</h3>
+                    <p>Department of Information Technology</p>
+                    <button class="view-btn">Manage</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ADD DEPARTMENT POPUP -->
+    <div class="offering-modal" id="departmentModal">
+
+        <div class="offering-modal-content">
+
+            <div class="offering-modal-header">
+                <div>
+                    <h2>Add New Department</h2>
+                    <p>Enter department information.</p>
+                </div>
+
+                <button type="button" class="modal-close"
+                    id="closeDepartmentBtn">
+                    &times;
+                </button>
+            </div>
+
+            <form id="departmentForm">
+
+                <div class="offering-form-grid">
+
+                    <div class="offering-form-group">
+                        <label for="departmentCode">Department Code</label>
+                        <input type="text" id="departmentCode"
+                            name="department_code"
+                            placeholder="e.g. SE" required>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="departmentName">Department Name</label>
+                        <input type="text" id="departmentName"
+                            name="department_name"
+                            placeholder="Enter department name" required>
+                    </div>
+
+                </div>
+
+                <div class="offering-form-actions">
+
+                    <button type="button"
+                        class="cancel-offering-btn"
+                        id="cancelDepartmentBtn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="save-offering-btn">
+                        Save Department
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- SESSIONS -->
+
+
+<!-- ACADEMIC SESSIONS -->
+<section id="sessions" class="content-section">
+
+    <div class="section-title">
+        <div>
+            <h2>Academic Sessions & Rules</h2>
+            <p>Manage student sessions and subject eligibility rules.</p>
+        </div>
+    </div>
+
+    <div class="section-actions">
+
+        <button class="primary-btn" id="addSessionBtn">
+            <i class="fa-solid fa-plus"></i> Add Session
+        </button>
+
+        <button type="button" id="viewSessionsBtn" class="view-btn">
+            View Sessions
+        </button>
+
+    </div>
+
+    <!-- VIEW SESSIONS POPUP -->
+    <div class="offering-modal" id="sessionsViewModal">
+
+        <div class="offering-modal-content">
+
+            <div class="offering-modal-header">
+                <div>
+                    <h2>Academic Sessions</h2>
+                    <p>View and manage all academic sessions.</p>
+                </div>
+
+                <button type="button" class="modal-close"
+                    id="closeSessionsViewBtn">
+                    &times;
+                </button>
+            </div>
+
+            <div class="table-card">
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Session</th>
+                                <th>Eligibility Rule</th>
+                                <th>Maximum Credits</th>
+                                <th>Fee / Subject</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sessionsTable">
+                            <tr>
+                                <td colspan="6">Loading sessions...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ADD SESSION POPUP -->
+    <div class="offering-modal" id="sessionModal">
+
+        <div class="offering-modal-content">
+
+            <div class="offering-modal-header">
+                <div>
+                    <h2>Add Academic Session</h2>
+                    <p>Set session details and enrollment rules.</p>
+                </div>
+
+                <button type="button" class="modal-close"
+                    id="closeSessionBtn">
+                    &times;
+                </button>
+            </div>
+
+            <form id="sessionForm">
+
+                <div class="offering-form-grid">
+
+                    <div class="offering-form-group">
+                        <label for="sessionName">Academic Session</label>
+                        <input type="text" id="sessionName"
+                            name="session_name"
+                            placeholder="e.g. 2026-2030"
+                            pattern="[0-9]{4}-[0-9]{4}"
+                            title="Enter session in format 2026-2030"
+                            required>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="sessionEligibility">Eligibility Rule</label>
+                        <select id="sessionEligibility"
+                            name="eligibility_rule" required>
+                            <option value="">Select Rule</option>
+                            <option value="Any subject">Any subject</option>
+                            <option value="Previously studied subjects">
+                                Previously studied subjects
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="sessionCredits">Maximum Credit Hours</label>
+                        <input type="number" id="sessionCredits"
+                            name="max_credits"
+                            placeholder="Enter maximum credits"
+                            min="1" max="30" required>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="sessionFee">Fee Per Subject</label>
+                        <input type="text" id="sessionFee"
+                            value="Rs. 5,000" readonly>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="sessionStatus">Status</label>
+                        <select id="sessionStatus" name="status" required>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="offering-form-actions">
+                    <button type="button"
+                        class="cancel-offering-btn"
+                        id="cancelSessionBtn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="save-offering-btn">
+                        Save Session
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- EDIT SESSION RULE POPUP -->
+    <div class="offering-modal" id="editRuleModal">
+
+        <div class="offering-modal-content">
+
+            <div class="offering-modal-header">
+                <div>
+                    <h2>Edit Session Rules</h2>
+                    <p>Update maximum credits and enrollment fee.</p>
+                </div>
+
+                <button type="button" class="modal-close"
+                    id="closeEditRuleBtn">
+                    &times;
+                </button>
+            </div>
+
+            <form id="editRuleForm">
+
+                <div class="offering-form-grid">
+
+                    <div class="offering-form-group">
+                        <label for="editRuleSession">Academic Session</label>
+                        <input type="text" id="editRuleSession" readonly>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="editRuleCredits">Maximum Credit Hours</label>
+                        <input type="number" id="editRuleCredits"
+                            min="1" max="30" required>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="editRuleFee">
+                            Enrollment Fee Per Course (Rs.)
+                        </label>
+                        <input type="number" id="editRuleFee"
+                            min="1" step="0.01" required>
+                    </div>
+
+                </div>
+
+                <div class="offering-form-actions">
+                    <button type="button"
+                        class="cancel-offering-btn"
+                        id="cancelEditRuleBtn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="save-offering-btn">
+                        Update Rules
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</section>
+
+
+           
+<!-- STUDENTS -->
+
+<!-- STUDENTS -->
+<section id="students" class="content-section">
+
+    <div class="section-title">
+        <div>
+            <h2>Student Management</h2>
+            <p>View student records and manage their academic information.</p>
+        </div>
+    </div>
+
+    <div class="section-actions">
+
+        <button class="primary-btn" id="addStudentBtn">
+            <i class="fa-solid fa-plus"></i> Add Student
+        </button>
+
+        <button type="button" id="viewStudentsBtn" class="view-btn">
+            View Students
+        </button>
+
+    </div>
+
+    <!-- VIEW STUDENTS POPUP -->
+    <div class="offering-modal" id="studentsViewModal">
+
+        <div class="offering-modal-content">
+
+            <div class="offering-modal-header">
+                <div>
+                    <h2>Registered Students</h2>
+                    <p>View and manage all registered students.</p>
+                </div>
+
+                <button type="button" class="modal-close"
+                    id="closeStudentsViewBtn">
+                    &times;
+                </button>
+            </div>
+
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>Registered Students</h3>
+                    <input type="search" placeholder="Search student...">
+                </div>
+
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Session</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ADD STUDENT POPUP -->
+    <div class="modal-overlay" id="studentModal">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+                <div>
+                    <h2>Add New Student</h2>
+                    <p>Enter student details to create a login account.</p>
+                </div>
+
+                <button type="button" class="modal-close"
+                    id="closeStudentBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="studentForm">
+
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId"
+                        placeholder="e.g. ST-1003" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentName">Full Name</label>
+                    <input type="text" id="studentName"
+                        placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentFatherName">Father Name</label>
+                    <input type="text" id="studentFatherName"
+                        placeholder="Enter father's name">
+                </div>
+
+                <div class="form-group">
+                    <label for="studentEmail">Email Address</label>
+                    <input type="email" id="studentEmail"
+                        placeholder="Enter email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentDepartment">Department</label>
+                    <select id="studentDepartment" required>
+                        <option value="">Loading Departments...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentSession">Academic Session</label>
+                    <select id="studentSession" required>
+                        <option value="">Loading Sessions...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentPassword">Password</label>
+                    <input type="password" id="studentPassword"
+                        placeholder="Create login password"
+                        minlength="8" required>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn"
+                        id="cancelStudentBtn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="primary-btn">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save Student
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- VIEW STUDENT DETAILS POPUP -->
+    <div class="modal-overlay" id="viewStudentModal">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+                <div>
+                    <h2>Student Details</h2>
+                    <p>View and manage student information.</p>
+                </div>
+
+                <button type="button" class="modal-close"
+                    id="closeViewStudentBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="form-group">
+                <label>Student ID</label>
+                <input type="text" id="viewStudentId" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="viewStudentName" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Father Name</label>
+                <input type="text" id="viewStudentFatherName" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="text" id="viewStudentEmail" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Department</label>
+                <input type="text" id="viewStudentDepartment" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Academic Session</label>
+                <input type="text" id="viewStudentSession" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Account Status</label>
+                <input type="text" id="viewStudentStatus" readonly>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="cancel-btn"
+                    id="closeViewStudentBtn2">
+                    Close
+                </button>
+
+                <button type="button" class="primary-btn"
+                    id="toggleStudentStatusBtn">
+                    Deactivate Student
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+       
+<!-- TEACHERS -->
+<section id="teachers" class="content-section">
+
+    <div class="section-title">
+        <div>
+            <h2>Teacher Management</h2>
+            <p>Add teachers and manage their assigned courses.</p>
+        </div>
+    </div>
+
+    <div class="section-actions">
+
+        <button class="primary-btn" id="addTeacherBtn">
+            <i class="fa-solid fa-plus"></i> Add Teacher
+        </button>
+
+        <button type="button" class="view-btn" id="viewTeachersBtn">
+            View Teachers
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- Add Teacher Popup -->
+
+<div class="modal-overlay" id="teacherModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <div>
+                <h2>Add New Teacher</h2>
+                <p>Enter teacher details to create an account.</p>
+            </div>
+
+            <button type="button" class="modal-close" id="closeTeacherModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form id="teacherForm">
+
+            <div class="form-group">
+                <label for="teacherId">Teacher ID</label>
+                <input type="text" id="teacherId"
+                    placeholder="e.g. TC-102" required>
+            </div>
+
+            <div class="form-group">
+                <label for="teacherName">Full Name</label>
+                <input type="text" id="teacherName"
+                    placeholder="Enter full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="teacherEmail">Email Address</label>
+                <input type="email" id="teacherEmail"
+                    placeholder="Enter email address" required>
+            </div>
+
+            <div class="form-group">
+    <label for="teacherDepartment">Department</label>
+    <select id="teacherDepartment" required>
+        <option value="">Select Department</option>
+    </select>
+</div>
+            <div class="form-group">
+                <label for="teacherPassword">Password</label>
+                <input type="password" id="teacherPassword"
+                    placeholder="Create login password"
+                    minlength="8" required>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="cancel-btn"
+                    id="cancelTeacherModal">
+                    Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Save Teacher
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- VIEW ALL TEACHERS POPUP -->
+<div class="modal-overlay" id="viewTeachersListModal">
+
+    <div class="modal-box" style="max-width: 1100px;">
+
+        <div class="modal-header">
+            <div>
+                <h2>Registered Teachers</h2>
+                <p>View and manage teacher records.</p>
+            </div>
+
+            <button type="button" class="modal-close" id="closeTeachersListBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="table-header">
+            <input type="search" id="teacherSearch"
+                placeholder="Search teacher...">
+        </div>
+
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Teacher ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Email</th>
+                        <th>Assigned Subjects</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="teachersTable">
+                    <tr>
+                        <td colspan="7">Loading teachers...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<!-- VIEW TEACHER DETAILS POPUP -->
+<div class="modal-overlay" id="viewTeacherModal">
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <div>
+                <h2>Teacher Details</h2>
+                <p>View teacher information and manage account status.</p>
+            </div>
+
+            <button type="button" class="modal-close" id="closeViewTeacherBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="form-group">
+            <label>Teacher ID</label>
+            <input type="text" id="viewTeacherId" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="viewTeacherName" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="viewTeacherEmail" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Department</label>
+            <input type="text" id="viewTeacherDepartment" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Assigned Subjects</label>
+            <textarea id="viewTeacherSubjects" rows="3" readonly></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Account Status</label>
+            <input type="text" id="viewTeacherStatus" readonly>
+        </div>
+
+        <div class="modal-actions">
+            <button type="button" class="cancel-btn" id="closeViewTeacherBtn2">
+                Close
+            </button>
+
+            <button type="button" class="primary-btn" id="toggleTeacherStatusBtn">
+                Deactivate Teacher
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- SELECT SESSION FOR TEACHER DEACTIVATION -->
+<div class="modal-overlay" id="teacherSessionModal">
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <div>
+                <h2>Select Academic Session</h2>
+                <p>Select the session for teacher deactivation.</p>
+            </div>
+
+            <button type="button" class="modal-close" id="closeTeacherSessionModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="form-group">
+            <label for="teacherDeactivateSession">Academic Session</label>
+            <select id="teacherDeactivateSession" required>
+                <option value="">Select Session</option>
+            </select>
+        </div>
+<!-- REPLACEMENT TEACHER SECTION -->
+<div id="teacherReplacementSection" style="display: none;">
+
+    <h3>Assign Replacement Teachers</h3>
+
+    <p>Select a replacement teacher for each course with approved students.</p>
+
+    <div id="teacherReplacementList"></div>
+
+</div>
+
+        <div class="modal-actions">
+            <button type="button" class="cancel-btn" id="cancelTeacherSession">
+                Cancel
+            </button>
+
+            <button type="button" class="primary-btn" id="checkTeacherSessionBtn">
+                Continue
+            </button>
+            <button
+    type="button"
+    class="primary-btn"
+    id="confirmTeacherDeactivation"
+    style="display: none;"
+>
+    Confirm Deactivation
+</button>
+        </div>
+
+    </div>
+</div>
+
+
+  <!-- SUBJECTS -->
+   
+<!-- SUBJECTS -->
+<section id="subjects" class="content-section">
+
+    <div class="section-title">
+        <div>
+            <h2>Subject Management</h2>
+            <p>Create and manage academic subjects.</p>
+        </div>
+    </div>
+
+    <div class="section-actions">
+
+        <button class="primary-btn" id="addSubjectBtn">
+            <i class="fa-solid fa-plus"></i> Add Subject
+        </button>
+
+        <button type="button" class="view-btn" id="viewSubjectsBtn">
+            View Subjects
+        </button>
+
+    </div>
+
+    <!-- VIEW ALL SUBJECTS POPUP -->
+    <div class="modal-overlay" id="viewSubjectsModal">
+
+        <div class="modal-box" style="max-width: 1100px;">
+
+            <div class="modal-header">
+                <div>
+                    <h2>Registered Subjects</h2>
+                    <p>View and manage academic subjects.</p>
+                </div>
+
+                <button type="button" class="modal-close" id="closeSubjectsBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject Code</th>
+                            <th>Subject Name</th>
+                            <th>Department</th>
+                            <th>Credit Hours</th>
+                            <th>Fee</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subjectsTable"></tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ADD SUBJECT POPUP -->
+    <div class="offering-modal" id="subjectModal">
+
+        <div class="offering-modal-content">
+
+            <div class="offering-modal-header">
+                <div>
+                    <h2>Add New Subject</h2>
+                    <p>Enter the academic subject details.</p>
+                </div>
+
+                <button type="button" class="modal-close"
+                    id="closeSubjectBtn">
+                    &times;
+                </button>
+            </div>
+
+            <form id="subjectForm">
+
+                <div class="offering-form-grid">
+
+                    <div class="offering-form-group">
+                        <label for="subjectCode">Subject Code</label>
+                        <input type="text" id="subjectCode"
+                            name="subject_code"
+                            placeholder="e.g. SE-301" required>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="subjectName">Subject Name</label>
+                        <input type="text" id="subjectName"
+                            name="subject_name"
+                            placeholder="Enter subject name" required>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="subjectDepartment">Department</label>
+                        <select id="subjectDepartment"
+                            name="department_id" required>
+                            <option value="">Select Department</option>
+                        </select>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="subjectCredits">Credit Hours</label>
+                        <select id="subjectCredits"
+                            name="credit_hours" required>
+                            <option value="">Select Credit Hours</option>
+                            <option value="1">1 Credit Hour</option>
+                            <option value="2">2 Credit Hours</option>
+                            <option value="3">3 Credit Hours</option>
+                        </select>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label>Course Fee</label>
+                        <input type="text" value="Rs. 5,000" readonly>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="subjectStatus">Status</label>
+                        <select id="subjectStatus" name="status" required>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="offering-form-actions">
+
+                    <button type="button"
+                        class="cancel-offering-btn"
+                        id="cancelSubjectBtn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="save-offering-btn">
+                        Save Subject
+                    </button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</section>
+
+           
+<!-- COURSE OFFERINGS -->
+<section id="offerings" class="content-section">
+
+    <div class="section-title">
+        <div>
+            <h2>Course Offerings & Teacher Assignment</h2>
+            <p>Assign available subjects to teachers for the summer session.</p>
+        </div>
+    </div>
+
+    <div class="section-actions">
+
+        <button class="primary-btn" id="addOfferingBtn">
+            <i class="fa-solid fa-plus"></i> Add Offering
+        </button>
+
+        <button type="button" class="view-btn" id="viewOfferingsBtn">
+            View Course Offerings
+        </button>
+
+    </div>
+
+    <!-- VIEW ALL OFFERINGS POPUP -->
+    <div class="modal-overlay" id="viewOfferingsModal">
+
+        <div class="modal-box" style="max-width: 1100px;">
+
+            <div class="modal-header">
+                <div>
+                    <h2>Course Offerings</h2>
+                    <p>View and manage offered courses.</p>
+                </div>
+
+                <button type="button" class="modal-close"
+                    id="closeOfferingsListBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Department</th>
+                            <th>Teacher</th>
+                            <th>Session</th>
+                            <th>Capacity</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="offeringsTable">
+                        <tr>
+                            <td colspan="7">Loading offerings...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ADD OFFERING POPUP -->
+    <div class="offering-modal" id="offeringModal">
+
+        <div class="offering-modal-content">
+
+            <div class="offering-modal-header">
+                <div>
+                    <h2>Add Course Offering</h2>
+                    <p>Assign a subject to a teacher and session.</p>
+                </div>
+
+                <button type="button" class="modal-close" id="closeOfferingBtn">
+                    &times;
+                </button>
+            </div>
+
+            <form id="offeringForm">
+
+                <div class="offering-form-grid">
+
+                    <div class="offering-form-group">
+                        <label for="offeringSubject">Subject</label>
+                        <select id="offeringSubject" name="subject_id" required>
+                            <option value="">Select Subject</option>
+                        </select>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="offeringDepartment">Department</label>
+                        <select id="offeringDepartment"
+                            name="department_id" required>
+                            <option value="">Select Department</option>
+                        </select>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="offeringTeacher">Teacher</label>
+                        <select id="offeringTeacher" name="teacher_id" required>
+                            <option value="">Select Teacher</option>
+                        </select>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="sessionDropdownBtn">Session</label>
+
+                        <div class="session-dropdown">
+
+                            <button type="button" id="sessionDropdownBtn"
+                                class="session-dropdown-btn">
+                                <span id="selectedSessionText">Select Session</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="session-dropdown-list"
+                                id="sessionCheckboxList">
+                            </div>
+
+                            <select id="offeringSession" name="session_id"
+                                multiple hidden>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="offeringCapacity">Capacity</label>
+                        <input type="number" id="offeringCapacity"
+                            name="capacity"
+                            placeholder="Enter capacity"
+                            min="1" required>
+                    </div>
+
+                    <div class="offering-form-group">
+                        <label for="offeringStatus">Status</label>
+                        <select id="offeringStatus" name="status" required>
+                            <option value="Available">Available</option>
+                            <option value="Unavailable">Unavailable</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="offering-form-actions">
+                    <button type="button" class="cancel-offering-btn"
+                        id="cancelOfferingBtn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="save-offering-btn">
+                        Save Offering
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</section>
+
+
+
+           
+
+<!-- TIMETABLE -->
+<section id="timetable" class="content-section">
+
+    <div class="section-title">
+        <div>
+            <h2>Timetable Management</h2>
+            <p>Manage class schedules and room allocations.</p>
+        </div>
+    </div>
+
+    <div class="section-actions">
+
+        <button class="primary-btn" id="addScheduleBtn">
+            <i class="fa-solid fa-plus"></i> Add Schedule
+        </button>
+
+        <button type="button" class="view-btn" id="viewTimetableBtn">
+            View Timetable
+        </button>
+
+    </div>
+
+</section>
+
+
+
+            <!-- VIEW TIMETABLE POPUP -->
+<div class="modal-overlay" id="viewTimetableModal">
+
+    <div class="modal-box" style="max-width: 1100px;">
+
+        <div class="modal-header">
+            <div>
+                <h2>Timetable Records</h2>
+                <p>View and manage class schedules.</p>
+            </div>
+
+            <button type="button" class="modal-close"
+                id="closeTimetableListBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Teacher</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Room</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="timetableTable">
+                    <tr>
+                        <td colspan="6">Loading timetable...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<!-- ADD SCHEDULE POPUP -->
+<div class="modal-overlay" id="scheduleModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+            <h3>Add Timetable Schedule</h3>
+
+            <button type="button" class="close-btn" id="closeScheduleBtn">
+                &times;
+            </button>
+        </div>
+
+        <form id="scheduleForm">
+
+            <div class="form-group">
+                <label for="scheduleOffering">Course Offering</label>
+                <select id="scheduleOffering" required>
+                    <option value="">Select Course Offering</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="scheduleDay">Day</label>
+                <select id="scheduleDay" required>
+                    <option value="">Select Day</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="scheduleStartTime">Start Time</label>
+                <input type="time" id="scheduleStartTime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="scheduleEndTime">End Time</label>
+                <input type="time" id="scheduleEndTime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="scheduleRoom">Room Number</label>
+                <input
+                    type="text"
+                    id="scheduleRoom"
+                    placeholder="Enter room number"
+                >
+            </div>
+
+            <div class="modal-actions">
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelScheduleBtn"
+                >
+                    Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                    Save Schedule
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+           
+            
+
+            <!-- ENROLLMENTS -->   <!-- FEE VERIFICATION -->
+
+<section id="enrollments" class="content-section">
+
+    <div class="section-title">
+        <div>
+            <h2>Enrollment Applications</h2>
+            <p>Manage and review student enrollment applications.</p>
+        </div>
+    </div>
+
+    <div class="table-card">
+
+        <div class="table-header">
+            <h3>Enrollment Requests</h3>
+            <input type="search" id="enrollmentSearch"
+                   placeholder="Search student or application...">
+        </div>
+
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Application ID</th>
+                        <th>Enrollment Details</th>
+                        <th>Fee Details</th>
+                        <th>Enrollment Status</th>
+                        <th>Fee Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="enrollmentsTable">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ANNOUNCEMENTS SECTION -->
+
+<section id="announcements" class="content-section">
+
+    <div class="section-title">
+        <div>
+            <h2>Announcements & Notifications</h2>
+            <p>Manage announcements for students and teachers.</p>
+        </div>
+    </div>
+
+    <!-- SECTION ACTION BUTTONS -->
+
+    <div class="section-actions">
+
+        <button class="primary-btn" id="addAnnouncementBtn">
+            <i class="fa-solid fa-plus"></i>
+            Add Announcement
+        </button>
+
+        <button class="view-btn" id="viewAnnouncementsBtn">
+            <i class="fa-solid fa-eye"></i>
+            View Announcements
+        </button>
+
+    </div>
+
+</section>
+
+<!-- VIEW ANNOUNCEMENTS POPUP -->
+
+<div class="offering-modal" id="viewAnnouncementsModal">
+
+    <div class="offering-modal-content">
+
+        <div class="modal-header">
+            <h3>Saved Announcements</h3>
+
+            <button type="button"
+                    class="close-btn"
+                    id="closeViewAnnouncementsBtn">
+                &times;
+            </button>
+        </div>
+
+        <div class="table-card">
+
+            <div class="table-scroll">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Message</th>
+                            <th>Audience</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="announcementsTable">
+                        <tr>
+                            <td colspan="4">No announcements available.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ADD ANNOUNCEMENT POPUP -->
+
+<div class="offering-modal" id="announcementModal">
+
+    <div class="offering-modal-content">
+
+        <div class="modal-header">
+            <h3>Create Announcement</h3>
+
+            <button type="button"
+                    class="close-btn"
+                    id="closeAnnouncementBtn">
+                &times;
+            </button>
+        </div>
+
+
+        <form id="announcementForm">
+
+            <div class="form-group">
+                <label for="announcementTitle">
+                    Announcement Title
+                </label>
+
+                <input
+                    type="text"
+                    id="announcementTitle"
+                    placeholder="Enter announcement title"
+                    maxlength="150"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="announcementAudience">Send To</label>
+
+                <select id="announcementAudience" required>
+                    <option value="">Select Audience</option>
+                    <option value="students">All Students</option>
+                    <option value="teachers">All Teachers</option>
+                    <option value="both">Students and Teachers</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="announcementMessage">Message</label>
+
+                <textarea
+                    id="announcementMessage"
+                    rows="5"
+                    placeholder="Write announcement..."
+                    required
+                ></textarea>
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelAnnouncementBtn">
+                    Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Publish Announcement
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+            <!-- ACTIVITY LOGS -->
+            <section id="activity" class="content-section">
+
+                <div class="section-title">
+                    <div>
+                        <h2>Activity Logs</h2>
+                        <p>Track important administrative activities.</p>
+                    </div>
+                </div>
+
+                <div class="table-card">
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Admin</th>
+                                    <th>Activity</th>
+                                    <th>Related Record</th>
+                                    <th>Date & Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Administrator</td>
+                                    <td>Payment Approved</td>
+                                    <td>ST-1001</td>
+                                    <td>06 Nov 2026, 10:30 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>Administrator</td>
+                                    <td>Subject Created</td>
+                                    <td>SE-301</td>
+                                    <td>06 Nov 2026, 09:15 AM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <footer class="dashboard-footer">
+                Summer Enrollment Management System
+                <span>© 2026 All Rights Reserved</span>
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+<!-- ENROLLMENT DETAILS POPUP -->
+<dialog id="enrollmentDetailsModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Enrollment Details</h2>
+
+            <button type="button"
+                    id="closeEnrollmentDetails">
+                &times;
+            </button>
+        </div>
+
+        <div class="modal-body">
+
+            <p><strong>Application ID:</strong>
+                <span id="detailApplicationId">-</span>
+            </p>
+
+            <p><strong>Student ID:</strong>
+                <span id="detailStudentId">-</span>
+            </p>
+
+            <p><strong>Student Name:</strong>
+                <span id="detailStudentName">-</span>
+            </p>
+
+            <p><strong>Session:</strong>
+                <span id="detailSession">-</span>
+            </p>
+
+            <p><strong>Selected Subjects:</strong></p>
+
+            <div id="detailSubjects">
+                No subjects available.
+            </div>
+
+            <p><strong>Total Credits:</strong>
+                <span id="detailCredits">-</span>
+            </p>
+
+            <p><strong>Total Fee:</strong>
+                <span id="detailTotalFee">-</span>
+            </p>
+
+            <p><strong>Application Status:</strong>
+                <span id="detailApplicationStatus">-</span>
+            </p>
+
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" id="closeEnrollmentDetailsBtn">
+                Close
+            </button>
+        </div>
+
+    </div>
+
+</dialog>
+
+
+<!-- FEE DETAILS POPUP -->
+<dialog id="feeDetailsModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Fee Verification</h2>
+
+            <button type="button" id="closeFeeDetails">
+                &times;
+            </button>
+        </div>
+
+        <div class="modal-body">
+
+            <p><strong>Transaction ID:</strong>
+                <span id="detailTransactionId">-</span>
+            </p>
+
+            <p><strong>Payment Method:</strong>
+                <span id="detailPaymentMethod">-</span>
+            </p>
+
+            <p><strong>Amount:</strong>
+                <span id="detailPaymentAmount">-</span>
+            </p>
+
+            <p><strong>Payment Date:</strong>
+                <span id="detailPaymentDate">-</span>
+            </p>
+
+            <p><strong>Payment Proof:</strong>
+                <a id="detailPaymentProof"
+                   href="#"
+                   target="_blank"
+                   rel="noopener">
+                    View Receipt
+                </a>
+            </p>
+
+            <p><strong>Fee Status:</strong>
+                <span id="detailPaymentStatus">-</span>
+            </p>
+
+            <p><strong>Admin Remarks:</strong>
+                <span id="detailAdminRemarks">-</span>
+            </p>
+
+            <div id="feeVerificationActions">
+
+                <button type="button" id="approvePaymentBtn">
+                    Approve Payment
+                </button>
+
+                <button type="button" id="rejectPaymentBtn">
+                    Reject Payment
+                </button>
+
+            </div>
+
+            <div id="paymentRejectionBox" hidden>
+
+                <label for="paymentRejectionReason">
+                    Rejection Reason
+                </label>
+
+                <textarea
+                    id="paymentRejectionReason"
+                    placeholder="Enter reason for rejecting payment..."
+                    rows="3">
+                </textarea>
+
+                <button type="button" id="confirmPaymentRejection">
+                    Confirm Rejection
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button type="button" id="closeFeeDetailsBtn">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</dialog>
+
+<script src="../js/admin.js" defer></script>
+</body>
+</html>
