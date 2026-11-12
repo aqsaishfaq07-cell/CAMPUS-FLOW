@@ -41,7 +41,7 @@ CAMPUS-FLOW provides a centralized platform where students can enroll in summer 
 ## 🖥️ Screenshots
 
 ### 1. Login Page
-![CAMPUS-FLOW Login](screenshots/login.png)
+![CAMPUS-FLOW Login](screenshots/login-page.png)
 
 ### 2. Student Dashboard
 ![Student Dashboard](screenshots/student-dashboard.png)
@@ -51,12 +51,6 @@ CAMPUS-FLOW provides a centralized platform where students can enroll in summer 
 
 ### 4. Admin Dashboard
 ![Admin Dashboard](screenshots/admin-dashboard.png)
-
-### 5. Course Enrollment
-![Course Enrollment](screenshots/course-enrollment.png)
-
-### 6. Fee Verification
-![Fee Verification](screenshots/fee-verification.png)
 
 ## 🧰 Technologies Used
 
